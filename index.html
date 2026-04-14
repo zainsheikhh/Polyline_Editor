@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <title>Polyline Editor</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<script>
+  if (!sessionStorage.getItem("fromMain")) {
+    window.location.href = "main-screen.html";
+  } else {
+    sessionStorage.removeItem("fromMain");
+  }
+</script>
+<div id="toolbar">
+  <span>PolyLine</span>
+
+  <button id="neutral">Neutral</button>
+  <button id="insert">Insert</button>
+  <button id="move">Move</button>
+  <button id="delete">Delete</button>
+  <button id="lock">Lock</button>
+  <button id="unlock">Unlock</button>
+
+  <div class="spacer"></div>
+
+  <button id="undo">Undo</button>
+  <button id="refresh">Refresh</button>
+  <button id="save">Save</button>
+  <button id="load">Load</button>
+  <button id="quit">Quit</button>
+</div>
+
+<div id="canvas"></div>
+
+<div id="status">
+  <span id="statusText">Mode: NEUTRAL</span>
+  <span id="statusHints"></span>
+  <span id="statusKeys"></span>
+</div>
+
+<div id="flash"></div>
+
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>
